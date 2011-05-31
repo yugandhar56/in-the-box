@@ -1,0 +1,18 @@
+#summary How to check out In-the-box, build it and run your code
+
+= 1-Checking out the project =
+To check out In-The-Box in Xcode 4, go to Window > Organizer. Go to the Repositories tab, click on the "+" at the bottom-left corner and select "Add Repository". Under "Location", enter "https://in-the-box.googlecode.com/svn/". Enter a name and click "Next".
+In your newly added repository, select "Trunk" and click "Checkout". Choose where you want to put the checked out project.
+
+= 2-Building and running In-The-Box =
+Open the checked out project in the Finder and double-click to open "InTheBox.xcodeproj".
+Select an "InTheBoxSim" target and click run. If you want to run it on a device, make sure you have valid provisioning profiles installed (for more info, check the iOS provisioning center).
+
+= 3-Running your own java code =
+If you want to run your own java code, you need to write one or more java classes, and one must have a main method. These classes must be compiled as ".class" files using javac. Then to feed it to Dalvik, you must convert it to Dex files. To do this, use "dx", inside the "Platform Tools" of the Android SDK.
+Usage example : 
+{{{ android-sdk-mac_x86/platform-tools/dx --dex --output=hello.jar Hello.class }}}
+(This will put the dex files inside a jar archive).
+
+The resulting jar must be added to the Xcode project and we want it to be copied inside the Application Bundle. To do so, click on the root element of your project, select the target "InTheBoxSim" and go to the tab named "Build Phases". Expand the "Copy Bundle Resources" section and add your jar (either by drag & dropping or by clicking "+").
+Next you need to modify In-The-Box's main file so that it uses your dex files. "main.m" can be found in "Supporting Files". In this file you have to modify the classpath of the jar containing your dex files and the name of the class containing your main method. This can be done easily by modifying the constants {{{ "MAIN_JAVA_CLASS_NAME" }}} and {{{ "JAR_NAME". }}} The jar will be searched inside the Application Bundle, where it should be copied if you followed the previous step.
