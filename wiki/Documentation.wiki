@@ -1,14 +1,29 @@
 #summary How to check out In-the-box, build it and run your code
 
 = 1 - Checking out the project =
-To check out In-The-Box in Xcode 4, go to Window > Organizer. Go to the Repositories tab, click on the "+" at the bottom-left corner and select "Add Repository". Under "Location", enter "https://in-the-box.googlecode.com/svn/". Enter a name and click "Next".
-In your newly added repository, select "Trunk" and click "Checkout". Choose where you want to put the checked out project.
+To check out In-The-Box in Xcode 4, go to Window > Organizer. Go to the Repositories tab, click on the "+" at the bottom-left corner and select "Add Repository".
+
+[http://in-the-box.googlecode.com/svn/wiki/addrepo.png]
+
+Under "Location", enter "https://in-the-box.googlecode.com/svn/", or replace "https" by "http" for a read-only checkout. "Subversion" should be automatically selected as type. Enter a name to identify the repository and click "Next".
+
+[http://in-the-box.googlecode.com/svn/wiki/repoaddr.png]
+
+As Trunk, Branches and Tags, enter the following and click "Add" :
+
+[http://in-the-box.googlecode.com/svn/wiki/repodirs.png]
+
+If you want an access that allows you to commit (with "https"), select your newly added repository, enter your username and your [http://code.google.com/hosting/settings generated googlecode.com password].
+
+[http://in-the-box.googlecode.com/svn/wiki/repousername.png]
+
+FInally, select "Trunk" and click "Checkout". Choose where you want to put the checked out project.
 
 
 
 = 2 - Building and running In-The-Box =
 Open the checked out project in the Finder and double-click to open "!InTheBox.xcodeproj".
-Select an "!InTheBoxSim" target and click run. If you want to run it on a device, make sure you have valid provisioning profiles installed (for more info, check the iOS provisioning center).
+Select an "!InTheBoxSim" target and click run. If you want to run it on a device, make sure you have valid provisioning profiles installed (for more info, check the [https://developer.apple.com/ios/my/overview/index.action iOS provisioning portal]).
 
 [http://in-the-box.googlecode.com/svn/wiki/runtarget.png]
 
