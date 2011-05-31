@@ -1,5 +1,8 @@
 #summary How to check out In-the-box, build it and run your code
 
+<wiki:toc max_depth="1" />
+
+
 = 1 - Checking out the project =
 To check out In-The-Box in Xcode 4, go to Window > Organizer. Go to the Repositories tab, click on the "+" at the bottom-left corner and select "Add Repository".
 
@@ -35,7 +38,7 @@ Usage example :
 {{{ android-sdk-mac_x86/platform-tools/dx --dex --output=hello.jar Hello.class }}}
 (This will put the dex files inside a jar archive).
 
-The resulting jar must be added to the Xcode project and we want it to be copied inside the Application Bundle. To do so, click on the root element of your project, select the target "!InTheBoxSim" and go to the tab named "Build Phases". Expand the "Copy Bundle Resources" section and add your jar (either by drag & dropping or by clicking "+").
+The resulting jar must be added to the Xcode project. To do so, right-click on a folder inside your project and select "Add Files to 'In-the-box'" (for example you can add it inside "!InTheBoxSim/test"). We also want it to be copied inside the Application Bundle. To do so, click on the root element of your project, select the target "!InTheBoxSim" and go to the tab named "Build Phases". Expand the "Copy Bundle Resources" section and add your jar (either by drag & dropping or by clicking "+").
 
 [http://in-the-box.googlecode.com/svn/wiki/bundleres.png]
 
