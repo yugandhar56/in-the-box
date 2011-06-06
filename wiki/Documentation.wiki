@@ -2,8 +2,13 @@
 
 <wiki:toc max_depth="1" />
 
+= 1 - Prerequisites =
+ * To build and run In-The-Box, you need to use a mac with Xcode installed (In-The-Box has only been tested with Xcode 4).
+ * To be able to convert class files to dex files (the input format of the Dalvik VM), you need to have the Android SDK with the "platform tools" installed.
 
-= 1 - Checking out the project =
+
+
+= 2 - Checking out the project =
 To check out In-The-Box in Xcode 4, go to Window > Organizer. Go to the Repositories tab, click on the "+" at the bottom-left corner and select "Add Repository".
 
 [http://in-the-box.googlecode.com/svn/wiki/addrepo.png]
@@ -24,7 +29,7 @@ FInally, select "Trunk" and click "Checkout". Choose where you want to put the c
 
 
 
-= 2 - Building and running In-The-Box =
+= 3 - Building and running In-The-Box =
 Open the checked out project in the Finder and double-click to open "!InTheBox.xcodeproj".
 Select an "!InTheBoxSim" target and click run. If you want to run it on a device, make sure you have valid provisioning profiles installed (for more info, check the [https://developer.apple.com/ios/my/overview/index.action iOS provisioning portal]).
 
@@ -32,7 +37,7 @@ Select an "!InTheBoxSim" target and click run. If you want to run it on a device
 
 
 
-= 3 - Running your own java code =
+= 4 - Running your own java code =
 If you want to run your own java code, you need to write one or more java classes, and one must have a main method. These classes must be compiled as ".class" files using javac. Then to feed it to Dalvik, you must convert it to Dex files. To do this, use "dx", inside the "Platform Tools" of the Android SDK.
 Usage example : 
 {{{ android-sdk-mac_x86/platform-tools/dx --dex --output=hello.jar Hello.class }}}
